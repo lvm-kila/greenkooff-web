@@ -10,7 +10,7 @@ export default function Hero() {
 
       <div className="absolute inset-0 mx-auto flex max-w-7xl flex-col justify-center px-4 text-white md:px-8">
         <div className="max-w-3xl">
-          <p className="mb-4 inline-block rounded-full bg-red-600 px-4 py-2 text-sm font-bold uppercase tracking-wide">
+          <p className="mb-4 inline-block rounded-full bg-emerald-600 px-4 py-2 text-sm font-bold uppercase tracking-wide">
             Sabor brutal en Los Andes
           </p>
           <h1 className="text-4xl font-black leading-tight md:text-6xl">
@@ -23,7 +23,7 @@ export default function Hero() {
           <div className="mt-8 flex flex-wrap gap-4">
             <a
               href="#promociones"
-              className="rounded-2xl bg-red-600 px-7 py-4 text-base font-extrabold shadow-xl shadow-red-900/40 transition hover:scale-105 hover:bg-red-500"
+              className="rounded-2xl bg-emerald-600 px-7 py-4 text-base font-extrabold shadow-xl shadow-emerald-900/40 transition hover:scale-105 hover:bg-emerald-500"
             >
               Ver promociones
             </a>
