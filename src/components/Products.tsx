@@ -1,7 +1,7 @@
 import { products } from "../data/products";
 
 const badgeStyles: Record<string, string> = {
-  "Más vendido": "bg-red-600 text-white",
+  "Más vendido": "bg-emerald-600 text-white",
   Nuevo: "bg-emerald-500 text-white",
   Favorito: "bg-zinc-900 text-white",
 };
@@ -10,7 +10,7 @@ export default function Products() {
   return (
     <section className="bg-zinc-100 py-16">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
-        <p className="text-sm font-bold uppercase tracking-widest text-red-600">Populares</p>
+        <p className="text-sm font-bold uppercase tracking-widest text-emerald-600">Populares</p>
         <h2 className="mt-2 text-3xl font-black text-zinc-900 md:text-4xl">Lo que más piden hoy</h2>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -31,8 +31,8 @@ export default function Products() {
                 <h3 className="text-xl font-extrabold text-zinc-900">{product.name}</h3>
                 <p className="text-sm text-zinc-600">{product.description}</p>
                 <div className="flex items-center justify-between pt-2">
-                  <span className="text-xl font-black text-red-600">{product.price}</span>
-                  <button className="rounded-xl bg-zinc-900 px-4 py-2 text-sm font-bold text-white transition group-hover:bg-red-600">
+                  <span className="text-xl font-black text-emerald-600">{product.price}</span>
+                  <button className="rounded-xl bg-zinc-900 px-4 py-2 text-sm font-bold text-white transition group-hover:bg-emerald-600">
                     Agregar
                   </button>
                 </div>

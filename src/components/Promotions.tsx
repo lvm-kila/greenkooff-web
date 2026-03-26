@@ -6,7 +6,7 @@ export default function Promotions() {
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <div className="mb-10 flex items-end justify-between gap-4">
           <div>
-            <p className="text-sm font-bold uppercase tracking-widest text-red-600">Promociones</p>
+            <p className="text-sm font-bold uppercase tracking-widest text-emerald-600">Promociones</p>
             <h2 className="text-3xl font-black text-zinc-900 md:text-4xl">Ofertas que salen ahora</h2>
           </div>
         </div>
@@ -19,7 +19,7 @@ export default function Promotions() {
             >
               <div className="relative">
                 <img src={promo.image} alt={promo.title} className="h-52 w-full object-cover" />
-                <span className="absolute left-3 top-3 rounded-full bg-red-600 px-3 py-1 text-xs font-extrabold text-white">
+                <span className="absolute left-3 top-3 rounded-full bg-emerald-600 px-3 py-1 text-xs font-extrabold text-white">
                   {promo.badge}
                 </span>
               </div>
@@ -27,12 +27,12 @@ export default function Promotions() {
                 <h3 className="text-lg font-extrabold text-zinc-900">{promo.title}</h3>
                 <p className="text-sm text-zinc-600">{promo.description}</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-black text-red-600">{promo.price}</span>
+                  <span className="text-2xl font-black text-emerald-600">{promo.price}</span>
                   <a
                     href="https://wa.me/56912345678?text=Hola%20Greenkooff,%20quiero%20esta%20promo"
                     target="_blank"
                     rel="noreferrer"
-                    className="rounded-xl bg-zinc-900 px-4 py-2 text-sm font-bold text-white transition group-hover:bg-red-600"
+                    className="rounded-xl bg-zinc-900 px-4 py-2 text-sm font-bold text-white transition group-hover:bg-emerald-600"
                   >
                     Pedir
                   </a>

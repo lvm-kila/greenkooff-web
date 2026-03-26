@@ -18,10 +18,10 @@ export default function Home() {
       <Gallery />
       <Location />
 
-      <section className="bg-red-600 py-16 text-white">
+      <section className="bg-emerald-600 py-16 text-white">
         <div className="mx-auto max-w-7xl px-4 text-center md:px-8">
           <h2 className="text-3xl font-black md:text-5xl">¿Antojo? Pide ahora por WhatsApp</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-red-100">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-emerald-100">
             Haz tu pedido en segundos y recibe tu comida favorita donde estés en Los Andes.
           </p>
           <a
