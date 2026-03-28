@@ -1,56 +1,36 @@
+import { BRAND, NAV_LINKS, WHATSAPP_URL } from "../content/siteContent";
+
 export default function Footer() {
   return (
-    <footer className="bg-black py-10 text-zinc-300">
+    <footer className="border-t border-blue-100 bg-white py-10">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 md:grid-cols-3 md:px-8">
         <div>
-          <p className="text-2xl font-black text-emerald-500">Greenkooff</p>
-          <p className="mt-2 text-sm">Comida rápida con promociones reales en Los Andes.</p>
+          <p className="text-2xl font-bold text-blue-800">{BRAND.name}</p>
+          <p className="mt-2 text-sm text-slate-600">Soluciones digitales premium para emprendedores, pymes y empresas en Chile.</p>
         </div>
 
         <div>
-          <p className="font-bold text-white">Navegación</p>
-          <ul className="mt-3 space-y-2 text-sm">
-            <li>
-              <a href="#inicio" className="hover:text-emerald-400">
-                Inicio
-              </a>
-            </li>
-            <li>
-              <a href="#promociones" className="hover:text-emerald-400">
-                Promociones
-              </a>
-            </li>
-            <li>
-              <a href="#menu" className="hover:text-emerald-400">
-                Menú
-              </a>
-            </li>
-            <li>
-              <a href="#ubicacion" className="hover:text-emerald-400">
-                Ubicación
-              </a>
-            </li>
+          <p className="font-semibold text-slate-900">Navegación</p>
+          <ul className="mt-3 space-y-2 text-sm text-slate-600">
+            {NAV_LINKS.map((link) => (
+              <li key={link.href}>
+                <a className="transition hover:text-blue-700" href={link.href}>
+                  {link.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
 
         <div>
-          <p className="font-bold text-white">Contacto</p>
-          <p className="mt-3 text-sm">📍 O&apos;Higgins 400, Los Andes</p>
-          <p className="mt-2 text-sm">📱 +56 9 1234 5678</p>
-          <div className="mt-4 flex gap-3 text-sm">
-            <a href="#" className="hover:text-emerald-400">
-              Instagram
-            </a>
-            <a href="#" className="hover:text-emerald-400">
-              Facebook
-            </a>
-            <a href="#" className="hover:text-emerald-400">
-              TikTok
-            </a>
-          </div>
+          <p className="font-semibold text-slate-900">Contacto</p>
+          <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="mt-3 inline-block text-sm text-blue-700 hover:underline">
+            Hablar por WhatsApp
+          </a>
+          <p className="mt-2 text-sm text-slate-600">contacto@impulsa360.cl (placeholder)</p>
         </div>
       </div>
-      <p className="mt-8 text-center text-xs text-zinc-500">© 2026 Greenkooff. Todos los derechos reservados.</p>
+      <p className="mx-auto mt-8 max-w-7xl px-4 text-xs text-slate-500 md:px-8">© 2026 {BRAND.name}. Todos los derechos reservados.</p>
     </footer>
   );
 }
