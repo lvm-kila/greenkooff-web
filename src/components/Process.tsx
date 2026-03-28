@@ -8,17 +8,17 @@ export default function Process() {
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <SectionTitle
           eyebrow="Cómo trabajamos"
-          title="Proceso claro para maximizar resultados"
-          subtitle="Combinamos diagnóstico comercial, implementación ágil y optimización continua para sostener crecimiento."
+          title="Un proceso claro para escalar sin improvisar"
+          subtitle="Desde diagnóstico hasta optimización continua, cada etapa está diseñada para acelerar resultados."
         />
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="relative mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {PROCESS_STEPS.map((step, index) => (
             <Reveal key={step.title} delay={index * 90}>
-              <article className="card-premium h-full">
-                <p className="text-sm font-semibold text-blue-700">Paso {index + 1}</p>
-                <h3 className="mt-2 text-xl font-semibold text-slate-900">{step.title}</h3>
-                <p className="mt-3 text-sm text-slate-600">{step.text}</p>
+              <article className="card-premium relative h-full">
+                <span className="inline-flex rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">{step.icon}</span>
+                <h3 className="mt-3 text-xl font-semibold text-slate-900">{step.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{step.text}</p>
               </article>
             </Reveal>
           ))}

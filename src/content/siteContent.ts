@@ -1,10 +1,10 @@
 export const BRAND = {
-  name: "Impulsa360",
-  tagline:
-    "Impulsamos tu empresa con marketing digital, diseño, automatización y tecnología para aumentar tus ventas.",
+  name: "GVC",
+  tagline: "Escala ventas con marketing, automatización y tecnología.",
   whatsappNumber: "56912345678",
-  whatsappMessage: "Hola Impulsa360, quiero impulsar mis ventas con sus planes.",
+  whatsappMessage: "Hola GVC, quiero escalar mis ventas con una estrategia digital.",
   location: "Chile",
+  email: "contacto@gvc.cl",
 };
 
 export const WHATSAPP_URL = `https://wa.me/${BRAND.whatsappNumber}?text=${encodeURIComponent(BRAND.whatsappMessage)}`;
@@ -19,31 +19,31 @@ export const NAV_LINKS = [
   { label: "Contacto", href: "#contacto" },
 ];
 
-export const TRUST_BADGES = ["+120 empresas asesoradas", "Equipo senior B2B", "Implementación en todo Chile"];
+export const TRUST_BADGES = ["+120 empresas asesoradas", "Estrategia B2B para Chile", "Implementación en 15 días"]; 
 
 export const STATS = [
-  { value: "35%", label: "Incremento promedio de conversiones" },
-  { value: "72h", label: "Para lanzar campañas iniciales" },
-  { value: "98%", label: "Clientes que renuevan el servicio" },
+  { value: "+37%", label: "Leads calificados" },
+  { value: "-42%", label: "Tiempo de respuesta" },
+  { value: "3.2x", label: "Pipeline comercial" },
 ];
 
 export const SERVICES = [
   {
     title: "Marketing Digital",
-    description: "Estrategias para atraer demanda calificada y convertirla en ventas medibles.",
-    icon: "📈",
+    description: "Estrategias de adquisición para atraer demanda y convertirla en oportunidades reales.",
+    icon: "megaphone",
     capabilities: ["Redes sociales", "Meta Ads", "Google Ads", "Email marketing", "Embudos de ventas"],
   },
   {
     title: "Desarrollo Web",
-    description: "Sitios y plataformas orientadas a conversión, rendimiento y escalabilidad.",
-    icon: "💻",
+    description: "Plataformas comerciales orientadas a conversión, rendimiento y escalabilidad.",
+    icon: "layout",
     capabilities: ["Páginas web", "Landing pages", "Ecommerce", "SEO", "Hosting y dominios"],
   },
   {
     title: "Automatización",
-    description: "Sistemas conectados para vender y responder más rápido con menos fricción.",
-    icon: "🤖",
+    description: "Flujos conectados para vender más rápido y operar con menos fricción.",
+    icon: "spark",
     capabilities: [
       "Chatbots WhatsApp",
       "Automatización de ventas",
@@ -54,24 +54,18 @@ export const SERVICES = [
   },
   {
     title: "Tecnología",
-    description: "Soluciones digitales a medida para empresas que buscan modernizar su operación.",
-    icon: "⚙️",
-    capabilities: [
-      "Desarrollo software",
-      "Sistemas web",
-      "Automatización de procesos",
-      "Digitalización de empresas",
-      "Integraciones API",
-    ],
+    description: "Arquitectura digital para modernizar procesos, datos e integraciones críticas.",
+    icon: "chip",
+    capabilities: ["Desarrollo software", "Sistemas web", "Digitalización de empresas", "Integraciones API", "Escalabilidad cloud"],
   },
 ];
 
 export const BENEFITS = [
-  "Enfoque en ventas, no solo en alcance",
-  "Automatización para reducir tiempos operativos",
-  "Presencia digital sólida y coherente",
-  "Estrategia escalable por etapa de crecimiento",
-  "Soporte experto por WhatsApp y correo",
+  "Enfoque en ventas y rentabilidad, no solo alcance",
+  "Automatización comercial para acelerar cierre",
+  "Visión integrada entre marketing, web y operación",
+  "Estrategia escalable según etapa de crecimiento",
+  "Acompañamiento experto y decisiones basadas en datos",
 ];
 
 export type PlanSlug = "emprendedor" | "pyme-crecimiento" | "premium";
@@ -84,6 +78,7 @@ export type Plan = {
   audience: string;
   objective: string;
   highlighted?: boolean;
+  badge?: string;
   includes: string[];
   expectedBenefits: string[];
 };
@@ -96,6 +91,7 @@ export const PLANS: Plan[] = [
     price: "$149.990 / mes",
     audience: "Ideal para emprendedores y pequeñas empresas que quieren comenzar a vender online.",
     objective: "Presencia digital y generación de clientes",
+    badge: "Base sólida",
     includes: [
       "Diseño de 6 publicaciones mensuales para redes sociales",
       "Administración de Instagram o Facebook",
@@ -116,6 +112,7 @@ export const PLANS: Plan[] = [
     audience: "Ideal para empresas que quieren aumentar ventas y publicidad.",
     objective: "Aumentar ventas y clientes",
     highlighted: true,
+    badge: "Más elegido",
     includes: [
       "Diseño de 12 publicaciones mensuales",
       "Administración de Instagram y Facebook",
@@ -136,6 +133,7 @@ export const PLANS: Plan[] = [
     price: "$499.990 / mes",
     audience: "Ideal para empresas que quieren automatizar ventas y crecer fuerte.",
     objective: "Escalar ventas y automatizar marketing",
+    badge: "Escalable",
     includes: [
       "Diseño de 20 publicaciones mensuales",
       "Administración de redes sociales",
@@ -162,26 +160,26 @@ export const COMPARISON_ROWS = [
 ];
 
 export const PROCESS_STEPS = [
-  { title: "Diagnóstico", text: "Analizamos tus canales, oferta y proceso comercial para detectar brechas de venta." },
-  { title: "Estrategia", text: "Definimos plan de acción, objetivos, canales y automatizaciones prioritarias." },
-  { title: "Implementación", text: "Lanzamos campañas, activos digitales y flujos para acelerar captación y cierre." },
-  { title: "Optimización", text: "Medimos KPIs, ajustamos tácticas y escalamos lo que mejor convierte." },
+  { title: "Diagnóstico", text: "Mapeamos oferta, canales y fricciones para detectar oportunidades de venta.", icon: "01" },
+  { title: "Estrategia", text: "Definimos objetivos, mix de canales y arquitectura digital por etapa.", icon: "02" },
+  { title: "Implementación", text: "Lanzamos campañas, landings y automatizaciones con foco en ejecución ágil.", icon: "03" },
+  { title: "Optimización", text: "Medimos KPIs, iteramos y escalamos lo que ya está entregando resultado.", icon: "04" },
 ];
 
 export const TESTIMONIALS = [
   {
     company: "Empresa de servicios B2B",
-    quote: "Placeholder editable: mejoramos la tasa de respuesta comercial y aumentamos reuniones en 8 semanas.",
+    quote: "Mejoramos la tasa de respuesta comercial y aumentamos reuniones en 8 semanas.",
     person: "Gerencia Comercial",
   },
   {
     company: "Pyme Ecommerce",
-    quote: "Placeholder editable: pasamos de una gestión manual a un embudo automatizado con reportes semanales.",
+    quote: "Pasamos de gestión manual a un embudo automatizado con reportes semanales.",
     person: "Fundador",
   },
   {
     company: "Consultora tecnológica",
-    quote: "Placeholder editable: ordenamos campañas y sitio web, logrando leads de mejor calidad.",
+    quote: "Ordenamos campañas y sitio web, logrando leads de mejor calidad.",
     person: "Directora de Marketing",
   },
 ];
@@ -189,23 +187,23 @@ export const TESTIMONIALS = [
 export const FAQS = [
   {
     question: "¿Existe permanencia mínima?",
-    answer: "Trabajamos por ciclos mensuales con planificación trimestral recomendada para consolidar resultados.",
+    answer: "Operamos por ciclos mensuales con roadmap trimestral sugerido para consolidar resultados.",
   },
   {
     question: "¿Cómo se paga el servicio?",
-    answer: "Aceptamos pago mensual con tarjeta y transferencia. Emitimos respaldo comercial según necesidad.",
+    answer: "Aceptamos pago mensual con tarjeta o transferencia con documentación comercial.",
   },
   {
     question: "¿Incluyen inversión publicitaria?",
-    answer: "No. El presupuesto de pauta se define junto al cliente y se paga directamente en plataformas de anuncios.",
+    answer: "No. El presupuesto de pauta se acuerda y se paga directamente en Meta o Google.",
   },
   {
     question: "¿Cuándo comienzan a verse resultados?",
-    answer: "Depende del punto de partida, pero normalmente en las primeras 4 a 8 semanas ya hay señales medibles.",
+    answer: "Generalmente entre la semana 4 y 8 ya se observan señales de mejora en KPIs comerciales.",
   },
   {
     question: "¿Puedo escalar de plan?",
-    answer: "Sí. Puedes subir de plan cuando tu operación necesite más volumen, automatización o soporte estratégico.",
+    answer: "Sí. Puedes cambiar de plan en cualquier momento según volumen, canales o necesidades de automatización.",
   },
 ];
 
