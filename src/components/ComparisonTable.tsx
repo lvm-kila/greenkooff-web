@@ -8,36 +8,29 @@ export default function ComparisonTable() {
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <SectionTitle
           eyebrow="Comparativa"
-          title="Diferencias claras para decidir con confianza"
-          subtitle="Visualiza alcance, automatización y profundidad de soporte en una sola vista."
+          title="Una decisión estratégica, explicada con claridad"
+          subtitle="Compara profundidad de servicio, nivel de automatización y capacidad de escalamiento sin fricción visual."
         />
 
         <Reveal>
-          <div className="mt-10 overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
-            <table className="w-full min-w-[760px] border-collapse text-sm">
-              <thead className="bg-slate-50">
-                <tr>
-                  <th className="px-5 py-4 text-left font-semibold text-slate-800">Plan</th>
-                  {COMPARISON_HEADERS.map((header) => (
-                    <th key={header} className="px-5 py-4 text-left font-semibold text-slate-800">
-                      {header}
-                    </th>
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {COMPARISON_ROWS.map((row, idx) => (
+              <article key={row.label} className={`card-premium h-full p-0 ${idx === 1 ? "border-orange-200" : ""}`}>
+                <div className={`rounded-t-[26px] px-5 py-4 ${idx === 1 ? "bg-orange-50" : "bg-slate-50"}`}>
+                  <p className="text-base font-semibold text-slate-900">{row.label}</p>
+                </div>
+                <div className="space-y-2 p-5">
+                  {COMPARISON_HEADERS.map((header, headerIndex) => (
+                    <div key={`${row.label}-${header}`} className="grid grid-cols-[1fr_auto] items-center gap-3 rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm">
+                      <span className="text-slate-600">{header}</span>
+                      <span className={`font-semibold ${row.values[headerIndex] === "Sí" ? "text-blue-700" : "text-slate-800"}`}>
+                        {row.values[headerIndex] === "Sí" ? "✓ Incluido" : row.values[headerIndex]}
+                      </span>
+                    </div>
                   ))}
-                </tr>
-              </thead>
-              <tbody>
-                {COMPARISON_ROWS.map((row, idx) => (
-                  <tr key={row.label} className={idx % 2 === 0 ? "bg-white" : "bg-slate-50/60"}>
-                    <td className="px-5 py-4 font-semibold text-slate-900">{row.label}</td>
-                    {row.values.map((value) => (
-                      <td key={`${row.label}-${value}`} className="px-5 py-4 text-slate-700">
-                        {value === "Sí" ? <span className="font-semibold text-blue-700">✓ {value}</span> : value}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                </div>
+              </article>
+            ))}
           </div>
         </Reveal>
       </div>
