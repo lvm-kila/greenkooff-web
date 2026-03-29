@@ -4,23 +4,40 @@
 
 :root {
   color-scheme: light;
+  --bg-base: #f4f7fc;
+  --bg-soft: #f9fafc;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --brand-navy: #13356f;
+  --brand-navy-deep: #0b1f47;
+  --brand-accent: #b8833b;
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
-  background: #ffffff;
+  min-height: 100%;
+  background:
+    radial-gradient(circle at 16% -8%, rgba(19, 53, 111, 0.13), transparent 34%),
+    radial-gradient(circle at 92% 8%, rgba(184, 131, 59, 0.08), transparent 28%),
+    linear-gradient(180deg, #fbfcfe 0%, var(--bg-base) 46%, #f3f7fc 100%);
 }
 
 body {
-  color: #0f172a;
+  color: var(--text-main);
+  font-family: var(--font-manrope), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
 }
 
 * {
   box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(19, 53, 111, 0.18);
 }
 
 .section-shell {
@@ -28,39 +45,41 @@ body {
 }
 
 .section-alt {
-  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 42%, #ffffff 100%);
+  background:
+    radial-gradient(circle at 82% 6%, rgba(19, 53, 111, 0.08), transparent 34%),
+    linear-gradient(180deg, #f9fbff 0%, #f2f6fb 55%, #f9fbff 100%);
 }
 
 .hero-grid {
   background:
-    radial-gradient(circle at 82% 15%, rgba(37, 99, 235, 0.14), transparent 43%),
-    radial-gradient(circle at 18% 90%, rgba(249, 115, 22, 0.08), transparent 34%),
-    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    radial-gradient(circle at 84% 12%, rgba(19, 53, 111, 0.2), transparent 40%),
+    radial-gradient(circle at 24% 88%, rgba(184, 131, 59, 0.12), transparent 33%),
+    linear-gradient(180deg, #f8fbff 0%, #eff4fb 56%, #f8fbff 100%);
 }
 
 .brand-orb {
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.75), rgba(37, 99, 235, 0.12) 50%, rgba(249, 115, 22, 0.14));
-  filter: blur(3px);
+  background: radial-gradient(circle at 35% 32%, rgba(255, 255, 255, 0.78), rgba(19, 53, 111, 0.22) 56%, rgba(184, 131, 59, 0.18));
+  filter: blur(6px);
 }
 
 .card-premium {
-  @apply rounded-[28px] border border-slate-200/90 bg-white p-6 shadow-[0_24px_55px_-34px_rgba(15,23,42,0.3)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_30px_70px_-30px_rgba(30,64,175,0.24)];
+  @apply rounded-[28px] border border-slate-200/80 bg-white/95 p-6 shadow-[0_30px_80px_-42px_rgba(11,31,71,0.48)] backdrop-blur-[2px] transition duration-500 hover:-translate-y-1 hover:shadow-[0_36px_90px_-40px_rgba(19,53,111,0.4)];
 }
 
 .btn-primary {
-  @apply inline-flex items-center justify-center gap-2 rounded-xl bg-orange-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_14px_28px_-14px_rgba(249,115,22,0.85)] transition duration-300 hover:-translate-y-0.5 hover:bg-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500;
+  @apply inline-flex items-center justify-center gap-2 rounded-xl border border-amber-500/20 bg-gradient-to-br from-[#c08b45] via-[#b8833b] to-[#9f6f2f] px-6 py-3 text-sm font-semibold tracking-[0.01em] text-white shadow-[0_14px_30px_-14px_rgba(144,95,31,0.75)] transition duration-300 hover:-translate-y-0.5 hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500;
 }
 
 .btn-secondary {
-  @apply inline-flex items-center justify-center gap-2 rounded-xl border border-blue-200 bg-white/95 px-6 py-3 text-sm font-semibold text-blue-700 transition duration-300 hover:-translate-y-0.5 hover:border-blue-300 hover:bg-blue-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500;
+  @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300/90 bg-white/90 px-6 py-3 text-sm font-semibold text-[#1a3b72] shadow-[0_8px_20px_-16px_rgba(11,31,71,0.45)] transition duration-300 hover:-translate-y-0.5 hover:border-[#1a3b72]/35 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1a3b72];
 }
 
 .badge-trust {
-  @apply rounded-full border border-slate-200/90 bg-white/95 px-4 py-2 text-[11px] font-semibold tracking-[0.08em] text-slate-600 shadow-[0_8px_25px_-18px_rgba(15,23,42,0.35)];
+  @apply rounded-full border border-slate-200/90 bg-white/90 px-4 py-2 text-[11px] font-semibold tracking-[0.1em] text-slate-600 shadow-[0_10px_25px_-18px_rgba(15,23,42,0.45)];
 }
 
 .input-premium {
-  @apply w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 transition duration-300 focus-visible:border-blue-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500;
+  @apply w-full rounded-xl border border-slate-300/80 bg-white/95 px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 shadow-[inset_0_1px_0_rgba(255,255,255,0.4)] transition duration-300 focus-visible:border-[#1a3b72]/45 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1a3b72];
 }
 
 .reveal {
@@ -75,6 +94,10 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .reveal,
   .reveal-visible,
   .card-premium,

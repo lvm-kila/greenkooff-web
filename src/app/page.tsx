@@ -13,7 +13,7 @@ import WhatsAppFloat from "../components/WhatsAppFloat";
 
 export default function Home() {
   return (
-    <main className="scroll-smooth bg-white text-slate-900">
+    <main className="scroll-smooth text-slate-900">
       <Navbar />
       <Hero />
       <Services />
