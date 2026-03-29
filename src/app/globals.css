@@ -104,11 +104,11 @@ body {
 }
 
 .btn-primary {
-  @apply inline-flex items-center justify-center gap-2 rounded-xl border border-amber-500/20 bg-gradient-to-br from-[#c08b45] via-[#b8833b] to-[#9f6f2f] px-6 py-3 text-sm font-semibold tracking-[0.01em] text-white shadow-[0_14px_30px_-14px_rgba(144,95,31,0.75)] transition duration-300 hover:-translate-y-0.5 hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500;
+  @apply inline-flex items-center justify-center gap-2 rounded-xl border border-amber-500/20 bg-gradient-to-br from-[#c08b45] via-[#b8833b] to-[#9f6f2f] px-6 py-3 text-sm font-semibold tracking-[0.01em] text-white shadow-[0_14px_30px_-14px_rgba(144,95,31,0.75)] transition duration-300 hover:-translate-y-0.5 hover:brightness-105 active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500 disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0;
 }
 
 .btn-secondary {
-  @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300/90 bg-white/90 px-6 py-3 text-sm font-semibold text-[#1a3b72] shadow-[0_8px_20px_-16px_rgba(11,31,71,0.45)] transition duration-300 hover:-translate-y-0.5 hover:border-[#1a3b72]/35 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1a3b72];
+  @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300/90 bg-white/90 px-6 py-3 text-sm font-semibold text-[#1a3b72] shadow-[0_8px_20px_-16px_rgba(11,31,71,0.45)] transition duration-300 hover:-translate-y-0.5 hover:border-[#1a3b72]/35 hover:bg-white active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1a3b72];
 }
 
 .badge-trust {
@@ -116,7 +116,72 @@ body {
 }
 
 .input-premium {
-  @apply w-full rounded-xl border border-slate-300/80 bg-white/95 px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 shadow-[inset_0_1px_0_rgba(255,255,255,0.4)] transition duration-300 focus-visible:border-[#1a3b72]/45 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1a3b72];
+  @apply w-full rounded-xl border border-slate-300/80 bg-white/95 px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 shadow-[inset_0_1px_0_rgba(255,255,255,0.4)] transition duration-300 hover:border-slate-400 focus-visible:border-[#1a3b72]/45 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1a3b72];
+}
+
+
+.contact-premium-banner {
+  background:
+    radial-gradient(circle at 12% 22%, rgba(255, 255, 255, 0.2), transparent 34%),
+    radial-gradient(circle at 88% 8%, rgba(125, 211, 252, 0.25), transparent 26%),
+    linear-gradient(130deg, #0d2450 0%, #123c79 50%, #0c5f87 100%);
+  border: 1px solid rgba(186, 230, 253, 0.25);
+  box-shadow: 0 35px 70px -45px rgba(11, 31, 71, 0.8);
+}
+
+.faq-item {
+  transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+}
+
+.faq-item:focus-within,
+.faq-item:hover {
+  border-color: rgba(26, 59, 114, 0.24);
+  box-shadow: 0 18px 48px -32px rgba(11, 31, 71, 0.4);
+}
+
+.faq-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  transition: background-color 180ms ease;
+}
+
+.faq-trigger:hover {
+  background-color: rgba(248, 250, 252, 0.95);
+}
+
+.faq-indicator {
+  display: inline-flex;
+  min-width: 1.8rem;
+  min-height: 1.8rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(26, 59, 114, 0.18);
+  color: #1a3b72;
+  font-weight: 600;
+  line-height: 1;
+  background: #fff;
+}
+
+.faq-panel {
+  display: grid;
+  transition: grid-template-rows 220ms ease, opacity 200ms ease;
+}
+
+.faq-panel > p {
+  overflow: hidden;
+}
+
+.faq-panel-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.faq-panel-closed {
+  grid-template-rows: 0fr;
+  opacity: 0;
 }
 
 .reveal {

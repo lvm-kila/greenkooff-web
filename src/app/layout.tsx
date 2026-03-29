@@ -9,8 +9,19 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "GVC | Marketing, Automatización y Tecnología",
-  description: "Web corporativa premium de servicios digitales para emprendedores, pymes y empresas en Chile.",
+  title: "GVC | Arquitectura Comercial Premium",
+  description:
+    "GVC diseña sistemas de marketing, automatización y tecnología para empresas que buscan escalar con control comercial.",
+  metadataBase: new URL("https://gvc.cl"),
+  openGraph: {
+    title: "GVC | Arquitectura Comercial Premium",
+    description:
+      "Alineamos marketing, tecnología y operación para crear crecimiento comercial sostenible en empresas de Chile y LATAM.",
+    url: "/",
+    siteName: "GVC",
+    locale: "es_CL",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
