@@ -19,7 +19,7 @@ export const NAV_LINKS = [
   { label: "Contacto", href: "#contacto" },
 ];
 
-export const TRUST_BADGES = ["+120 empresas acompañadas", "Operación B2B orientada a revenue", "Implementación estratégica desde 15 días"]; 
+export const TRUST_BADGES = ["+120 empresas acompañadas", "Operación B2B orientada a revenue", "Implementación estratégica desde 15 días"];
 
 export const STATS = [
   { value: "+37%", label: "Leads calificados" },
@@ -79,6 +79,8 @@ export type Plan = {
   objective: string;
   highlighted?: boolean;
   badge?: string;
+  valuePillar: string;
+  deliveryModel: string;
   includes: string[];
   expectedBenefits: string[];
 };
@@ -92,6 +94,8 @@ export const PLANS: Plan[] = [
     audience: "Ideal para emprendedores y pequeñas empresas que quieren comenzar a vender online.",
     objective: "Presencia digital y generación de clientes",
     badge: "Base sólida",
+    valuePillar: "Fundamentos comerciales y presencia profesional",
+    deliveryModel: "Gestión mensual + asesoría estratégica",
     includes: [
       "Diseño de 6 publicaciones mensuales para redes sociales",
       "Administración de Instagram o Facebook",
@@ -113,6 +117,8 @@ export const PLANS: Plan[] = [
     objective: "Aumentar ventas y clientes",
     highlighted: true,
     badge: "Más elegido",
+    valuePillar: "Escalamiento de demanda con control de rendimiento",
+    deliveryModel: "Gestión quincenal + optimización continua",
     includes: [
       "Diseño de 12 publicaciones mensuales",
       "Administración de Instagram y Facebook",
@@ -134,6 +140,8 @@ export const PLANS: Plan[] = [
     audience: "Ideal para empresas que quieren automatizar ventas y crecer fuerte.",
     objective: "Escalar ventas y automatizar marketing",
     badge: "Escalable",
+    valuePillar: "Orquestación comercial avanzada y automatización",
+    deliveryModel: "Cadencia semanal + dirección consultiva",
     includes: [
       "Diseño de 20 publicaciones mensuales",
       "Administración de redes sociales",
@@ -151,12 +159,43 @@ export const PLANS: Plan[] = [
   },
 ];
 
-export const COMPARISON_HEADERS = ["Publicaciones/mes", "Gestión de redes", "Meta Ads", "Landing page", "Automatización", "Reporte"];
+export type ComparisonRow = {
+  label: string;
+  badge: string;
+  positioning: string;
+  values: string[];
+  highlighted?: boolean;
+};
 
-export const COMPARISON_ROWS = [
-  { label: "Plan Emprendedor", values: ["6", "1 red", "No", "No", "WhatsApp Business", "Mensual"] },
-  { label: "Plan Pyme Crecimiento", values: ["12", "2 redes", "Sí", "No", "Embudo básico", "Quincenal"] },
-  { label: "Plan Empresa / Premium", values: ["20", "Completa", "Sí", "Sí", "Chatbot + CRM", "Semanal"] },
+export const COMPARISON_HEADERS = [
+  "Cadencia de contenido",
+  "Gestión de canales",
+  "Activación de pauta",
+  "Activos de conversión",
+  "Automatización comercial",
+  "Ritmo de seguimiento",
+];
+
+export const COMPARISON_ROWS: ComparisonRow[] = [
+  {
+    label: "Plan Emprendedor",
+    badge: "Base operacional",
+    positioning: "Para validar canal digital con orden comercial.",
+    values: ["6 publicaciones/mes", "1 red prioritaria", "No", "No", "WhatsApp Business", "Mensual"],
+  },
+  {
+    label: "Plan Pyme Crecimiento",
+    badge: "Recomendado",
+    positioning: "Para escalar captación con control de inversión.",
+    highlighted: true,
+    values: ["12 publicaciones/mes", "2 redes coordinadas", "Sí", "No", "Embudo básico", "Quincenal"],
+  },
+  {
+    label: "Plan Empresa / Premium",
+    badge: "Expansión estratégica",
+    positioning: "Para equipos que integran marketing, ventas y automatización.",
+    values: ["20 publicaciones/mes", "Gestión integral", "Sí", "Sí", "Chatbot + CRM", "Semanal"],
+  },
 ];
 
 export const PROCESS_STEPS = [
@@ -166,21 +205,61 @@ export const PROCESS_STEPS = [
   { title: "Optimización", text: "Medimos KPIs, iteramos y escalamos lo que ya está entregando resultado.", icon: "04" },
 ];
 
-export const TESTIMONIALS = [
+export type TestimonialCase = {
+  company: string;
+  sector: string;
+  companyType: string;
+  role: string;
+  challenge: string;
+  result: string;
+  quote: string;
+};
+
+export const TESTIMONIALS: TestimonialCase[] = [
   {
     company: "Grupo logístico industrial",
-    quote: "Pasamos de prospectos dispersos a un flujo comercial priorizado; en 8 semanas aumentamos reuniones de venta y calidad de lead.",
-    person: "Gerencia Comercial",
+    sector: "Logística B2B",
+    companyType: "Empresa mediana",
+    role: "Gerencia Comercial",
+    challenge: "Prospección dispersa y baja priorización de oportunidades.",
+    result: "Más reuniones calificadas y seguimiento comercial ordenado en 8 semanas.",
+    quote: "Pasamos de prospectos dispersos a un flujo comercial priorizado; hoy el equipo comercial invierte tiempo en oportunidades reales.",
   },
   {
     company: "Marca retail omnicanal",
+    sector: "Retail",
+    companyType: "Empresa en expansión",
+    role: "Founder & CEO",
+    challenge: "Pauta, CRM y seguimiento sin una lógica unificada.",
+    result: "Mayor trazabilidad comercial y mejor coordinación entre marketing y ventas.",
     quote: "Con GVC ordenamos pauta, CRM y seguimiento. El equipo recuperó foco comercial sin perder velocidad operativa.",
-    person: "Founder & CEO",
   },
   {
     company: "Consultora tecnológica",
+    sector: "Servicios tecnológicos",
+    companyType: "Consultora especializada",
+    role: "Directora de Marketing",
+    challenge: "Captación irregular y decisiones sin marco de indicadores.",
+    result: "Sistema de captación con KPIs claros para escalar con mayor control.",
     quote: "Redefinimos el sistema de captación completo y hoy trabajamos con indicadores comerciales claros para escalar con control.",
-    person: "Directora de Marketing",
+  },
+];
+
+export const IMPACT_SIGNALS = [
+  {
+    label: "Horizonte de impacto",
+    value: "4 a 8 semanas",
+    detail: "Señales tempranas en velocidad de respuesta, calidad de lead y consistencia del pipeline.",
+  },
+  {
+    label: "Método de ejecución",
+    value: "Sprints quincenales",
+    detail: "Planificación, implementación y ajustes en ciclos cortos orientados a decisiones de negocio.",
+  },
+  {
+    label: "Gobernanza comercial",
+    value: "KPIs accionables",
+    detail: "Visibilidad sobre embudo, desempeño de canales y puntos de fricción para mejorar rentabilidad.",
   },
 ];
 
