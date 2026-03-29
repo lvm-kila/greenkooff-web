@@ -3,7 +3,7 @@ import GvcLogo from "./GvcLogo";
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
         <a href="#inicio" className="transition hover:opacity-90" aria-label="Ir al inicio">
           <GvcLogo size="sm" />
@@ -20,7 +20,7 @@ export default function Navbar() {
         </ul>
 
         <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="btn-primary px-4 py-2.5 text-xs md:text-sm">
-          Agenda por WhatsApp
+          Agendar diagnóstico
         </a>
       </nav>
     </header>

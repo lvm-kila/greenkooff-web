@@ -17,8 +17,8 @@ export default function GvcLogo({ size = "md", withTagline = false, className = 
         <defs>
           <linearGradient id="gvc-grad" x1="6" y1="8" x2="188" y2="68" gradientUnits="userSpaceOnUse">
             <stop offset="0" stopColor="#1d4ed8" />
-            <stop offset="0.45" stopColor="#0891b2" />
-            <stop offset="1" stopColor="#22c55e" />
+            <stop offset="0.45" stopColor="#2563eb" />
+            <stop offset="1" stopColor="#f97316" />
           </linearGradient>
         </defs>
         <path
@@ -30,7 +30,7 @@ export default function GvcLogo({ size = "md", withTagline = false, className = 
           d="M189 23.1 178.6 31c-3.5-4.5-8.6-7.1-15-7.1-11.8 0-20.2 8.2-20.2 18.1 0 10.8 8.6 18.4 20.6 18.4 6.5 0 11.2-2 15.8-7l10.2 8.4C183.2 68 174.7 71 163 71c-22.1 0-35.8-14.8-35.8-29.5 0-16 14.2-29.5 35.8-29.5 11.3 0 19.8 3.4 26 11.1Z"
           fill="url(#gvc-grad)"
         />
-        <path d="m103.2 27.8 6.3 15.1 13-30.9h15.3l-22.5 52.3c-1.6 3.6-4.4 6.3-8.5 7.5-3.8 1-7.6.8-11.2-.5l-7.7-2.8 4-10.8 6.2 2.1c1.4.5 2.3.3 2.9-1l3.1-7.1-16-39.7h15.1l9.3 23.8Z" fill="#0ea5e9" opacity=".16"/>
+        <path d="m103.2 27.8 6.3 15.1 13-30.9h15.3l-22.5 52.3c-1.6 3.6-4.4 6.3-8.5 7.5-3.8 1-7.6.8-11.2-.5l-7.7-2.8 4-10.8 6.2 2.1c1.4.5 2.3.3 2.9-1l3.1-7.1-16-39.7h15.1l9.3 23.8Z" fill="#f97316" opacity=".2"/>
       </svg>
       {withTagline ? <span className="text-xs font-medium uppercase tracking-[0.22em] text-slate-500">Growth • Ventas • Code</span> : null}
     </div>

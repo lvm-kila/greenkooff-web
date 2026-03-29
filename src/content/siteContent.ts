@@ -1,6 +1,6 @@
 export const BRAND = {
   name: "GVC",
-  tagline: "Escala ventas con marketing, automatización y tecnología.",
+  tagline: "Arquitectura comercial premium para crecimiento sostenible.",
   whatsappNumber: "56912345678",
   whatsappMessage: "Hola GVC, quiero escalar mis ventas con una estrategia digital.",
   location: "Chile",
@@ -19,12 +19,12 @@ export const NAV_LINKS = [
   { label: "Contacto", href: "#contacto" },
 ];
 
-export const TRUST_BADGES = ["+120 empresas asesoradas", "Estrategia B2B para Chile", "Implementación en 15 días"]; 
+export const TRUST_BADGES = ["+120 empresas acompañadas", "Operación B2B orientada a revenue", "Implementación estratégica desde 15 días"]; 
 
 export const STATS = [
   { value: "+37%", label: "Leads calificados" },
-  { value: "-42%", label: "Tiempo de respuesta" },
-  { value: "3.2x", label: "Pipeline comercial" },
+  { value: "-42%", label: "Tiempo a primer contacto" },
+  { value: "3.2x", label: "Pipeline de oportunidades" },
 ];
 
 export const SERVICES = [
@@ -168,18 +168,18 @@ export const PROCESS_STEPS = [
 
 export const TESTIMONIALS = [
   {
-    company: "Empresa de servicios B2B",
-    quote: "Mejoramos la tasa de respuesta comercial y aumentamos reuniones en 8 semanas.",
+    company: "Grupo logístico industrial",
+    quote: "Pasamos de prospectos dispersos a un flujo comercial priorizado; en 8 semanas aumentamos reuniones de venta y calidad de lead.",
     person: "Gerencia Comercial",
   },
   {
-    company: "Pyme Ecommerce",
-    quote: "Pasamos de gestión manual a un embudo automatizado con reportes semanales.",
-    person: "Fundador",
+    company: "Marca retail omnicanal",
+    quote: "Con GVC ordenamos pauta, CRM y seguimiento. El equipo recuperó foco comercial sin perder velocidad operativa.",
+    person: "Founder & CEO",
   },
   {
     company: "Consultora tecnológica",
-    quote: "Ordenamos campañas y sitio web, logrando leads de mejor calidad.",
+    quote: "Redefinimos el sistema de captación completo y hoy trabajamos con indicadores comerciales claros para escalar con control.",
     person: "Directora de Marketing",
   },
 ];
