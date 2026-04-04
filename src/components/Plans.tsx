@@ -85,6 +85,9 @@ export default function Plans() {
                   <Link className="btn-primary" href={`/planes/${plan.slug}`}>
                     Ver detalle
                   </Link>
+                  <Link className="btn-secondary" href={`/contratar/${plan.slug}`}>
+                    Contratar plan
+                  </Link>
                   <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="btn-secondary">
                     Hablar con consultor
                   </a>
