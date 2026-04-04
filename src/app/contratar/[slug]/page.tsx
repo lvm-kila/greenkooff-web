@@ -4,26 +4,21 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import ContractSummary from "../../../components/subscription/ContractSummary";
-import { useAuth } from "../../../hooks/useAuth";
-import { dataRepository } from "../../../lib/data/provider";
+import { useRequireAuth } from "../../../lib/guards/useRequireAuth";
+import { useRuntimeServices } from "../../../hooks/useRuntimeServices";
 import type { SubscriptionPlan } from "../../../lib/domain/types";
 
 export default function ContractPage({ params }: { params: { slug: string } }) {
-  const { session, loading } = useAuth();
+  const { session } = useRequireAuth(`/contratar/${params.slug}`);
   const router = useRouter();
+  const { subscriptions } = useRuntimeServices();
   const [plan, setPlan] = useState<SubscriptionPlan | null>(null);
   const [acceptedTerms, setAcceptedTerms] = useState(false);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    dataRepository.getPlanBySlug(params.slug).then(setPlan);
-  }, [params.slug]);
-
-  useEffect(() => {
-    if (!loading && !session) {
-      router.replace(`/auth/login?next=${encodeURIComponent(`/contratar/${params.slug}`)}`);
-    }
-  }, [loading, params.slug, router, session]);
+    subscriptions.resolvePlanForContract(params.slug).then(setPlan);
+  }, [params.slug, subscriptions]);
 
   const canSubmit = useMemo(() => Boolean(session && plan && acceptedTerms), [acceptedTerms, plan, session]);
 
@@ -32,7 +27,7 @@ export default function ContractPage({ params }: { params: { slug: string } }) {
     if (!session || !plan) return;
     setError("");
     try {
-      await dataRepository.createContractDraft({ userId: session.user.id, planSlug: plan.slug, acceptedTerms });
+      await subscriptions.createPendingSubscription({ userId: session.user.id, planSlug: plan.slug, acceptedTerms });
       router.push(`/suscripcion/exito?plan=${plan.slug}`);
     } catch (err) {
       setError(err instanceof Error ? err.message : "No se pudo guardar la contratación");

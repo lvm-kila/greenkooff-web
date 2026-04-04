@@ -1,22 +1,20 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import AccountShell from "../../components/account/AccountShell";
-import { useAuth } from "../../hooks/useAuth";
-import { dataRepository } from "../../lib/data/provider";
+import { useRequireAuth } from "../../lib/guards/useRequireAuth";
+import { useRuntimeServices } from "../../hooks/useRuntimeServices";
 import type { AccountSnapshot } from "../../lib/data/types";
 
 export default function AccountPage() {
-  const { session, loading } = useAuth();
-  const router = useRouter();
+  const { session } = useRequireAuth("/mi-cuenta");
+  const { subscriptions } = useRuntimeServices();
   const [snapshot, setSnapshot] = useState<AccountSnapshot | null>(null);
 
   useEffect(() => {
-    if (!loading && !session) router.replace("/auth/login?next=/mi-cuenta");
-    if (session) dataRepository.getAccountSnapshot(session.user.id).then(setSnapshot);
-  }, [loading, router, session]);
+    if (session) subscriptions.getAccountSnapshot(session.user.id).then(setSnapshot);
+  }, [session, subscriptions]);
 
   if (!session) return null;
 
