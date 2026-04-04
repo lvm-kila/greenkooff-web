@@ -1,31 +1,28 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import AccountShell from "../../../components/account/AccountShell";
-import { useAuth } from "../../../hooks/useAuth";
-import { dataRepository } from "../../../lib/data/provider";
+import { useRequireAuth } from "../../../lib/guards/useRequireAuth";
+import { useRuntimeServices } from "../../../hooks/useRuntimeServices";
 import type { AccountSnapshot } from "../../../lib/data/types";
-import { billingProvider } from "../../../lib/billing/provider";
 
 export default function AccountPaymentsPage() {
-  const { session, loading } = useAuth();
-  const router = useRouter();
+  const { session } = useRequireAuth("/mi-cuenta/pagos");
+  const { billing, subscriptions } = useRuntimeServices();
   const [snapshot, setSnapshot] = useState<AccountSnapshot | null>(null);
   const [message, setMessage] = useState("");
 
-  const refresh = async (userId: string) => setSnapshot(await dataRepository.getAccountSnapshot(userId));
+  const refresh = useCallback(async (userId: string) => setSnapshot(await subscriptions.getAccountSnapshot(userId)), [subscriptions]);
 
   useEffect(() => {
-    if (!loading && !session) router.replace("/auth/login?next=/mi-cuenta/pagos");
     if (session) refresh(session.user.id);
-  }, [loading, router, session]);
+  }, [refresh, session]);
 
   if (!session) return null;
 
   const enroll = async () => {
     if (!snapshot?.subscription) return;
-    const result = await billingProvider.enrollPaymentMethod({ userId: session.user.id, subscriptionId: snapshot.subscription.id });
+    const result = await billing.continueToPaymentEnrollment({ userId: session.user.id, subscriptionId: snapshot.subscription.id });
     setMessage(`Método inscrito (${result.paymentMethod.cardBrand} ****${result.paymentMethod.last4}) en modo mock.`);
     await refresh(session.user.id);
   };
