@@ -37,9 +37,9 @@ export default function PlanLanding({ plan }: PlanLandingProps) {
                 <p className="mt-1 text-xs uppercase tracking-[0.12em] text-blue-100">CLP + IVA</p>
                 <p className="mt-4 text-sm text-blue-100">Objetivo principal: {plan.objective}</p>
                 <div className="mt-6 flex flex-wrap gap-3">
-                  <a href="#contratar" className="btn-primary">
+                  <Link href={`/contratar/${plan.slug}`} className="btn-primary">
                     Contratar plan
-                  </a>
+                  </Link>
                   <a
                     href={WHATSAPP_URL}
                     target="_blank"
@@ -123,14 +123,14 @@ export default function PlanLanding({ plan }: PlanLandingProps) {
             </div>
 
             <div className="mt-7 rounded-2xl border border-blue-100 bg-blue-50/50 p-5">
-              <h3 className="text-lg font-semibold text-slate-900">Siguiente paso: evaluación comercial breve</h3>
+              <h3 className="text-lg font-semibold text-slate-900">Siguiente paso: iniciar contratación protegida</h3>
               <p className="mt-2 text-sm text-slate-600">
-                Revisamos contexto, objetivos y madurez digital para confirmar ajuste de plan y prioridades de implementación.
+Inicia sesión, confirma tu plan y deja tu suscripción en estado pendiente de método de pago.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
-                <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="btn-primary">
-                  Solicitar evaluación
-                </a>
+                <Link href={`/contratar/${plan.slug}`} className="btn-primary">
+                  Contratar este plan
+                </Link>
                 <Link href="/" className="btn-secondary">
                   Ver comparativa general
                 </Link>
