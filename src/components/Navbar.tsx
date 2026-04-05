@@ -59,16 +59,16 @@ export default function Navbar() {
           <div className="hidden items-center gap-2 lg:flex">
             {session ? (
               <>
-                <Link href="/mi-cuenta" className="btn-secondary px-4 py-2.5 text-xs md:text-sm">Mi cuenta</Link>
-                <button onClick={() => logout()} className="btn-secondary px-4 py-2.5 text-xs md:text-sm" type="button">Cerrar sesión</button>
+                <Link href="/mi-cuenta" className="btn-secondary btn-secondary-compact text-xs md:text-sm">Mi cuenta</Link>
+                <button onClick={() => logout()} className="btn-secondary btn-secondary-compact text-xs md:text-sm" type="button">Cerrar sesión</button>
               </>
             ) : (
               <>
-                <Link href="/auth/login" className="btn-secondary px-4 py-2.5 text-xs md:text-sm">Iniciar sesión</Link>
-                <Link href="/auth/register" className="btn-secondary px-4 py-2.5 text-xs md:text-sm">Crear cuenta</Link>
+                <Link href="/auth/login" className="btn-secondary btn-secondary-compact text-xs md:text-sm">Iniciar sesión</Link>
+                <Link href="/auth/register" className="btn-secondary btn-secondary-compact text-xs md:text-sm">Crear cuenta</Link>
               </>
             )}
-            <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="btn-primary px-4 py-2.5 text-xs md:text-sm">
+            <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="btn-primary btn-primary-compact text-xs md:text-sm">
               Agendar diagnóstico
             </a>
           </div>
