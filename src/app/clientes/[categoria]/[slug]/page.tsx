@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import AddToCartButton from "../../../../components/clientes/AddToCartButton";
 import {
   allClientPublications,
+  categoryFallbackImage,
   getClientPublication,
   getRelatedPublications,
   isClientCategory,
@@ -60,6 +61,7 @@ export default function ClienteDetailPage({ params }: DetailPageProps) {
   if (!publication) {
     notFound();
   }
+  const fallbackImage = categoryFallbackImage[publication.category];
 
   const related = getRelatedPublications(params.categoria, publication.slug, 3);
 
@@ -198,7 +200,7 @@ export default function ClienteDetailPage({ params }: DetailPageProps) {
           {related.map((item) => (
             <article key={item.slug} className="overflow-hidden rounded-3xl border border-slate-200 bg-white/95 shadow-[0_20px_45px_-38px_rgba(11,31,71,0.6)]">
               <div className="relative h-40">
-                <Image src={item.gallery[0]?.src ?? "https://source.unsplash.com/1600x1000/?chile,travel,landscape&sig=998"} alt={item.title} fill className="object-cover" />
+                <Image src={item.gallery[0]?.src ?? fallbackImage.src} alt={item.gallery[0]?.alt ?? fallbackImage.alt} fill className="object-cover" />
               </div>
               <div className="p-4">
                 <p className="text-xs font-semibold text-[#1a3b72]">{item.relatedHint}</p>
