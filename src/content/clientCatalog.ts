@@ -11,6 +11,17 @@ export type CatalogImage = {
   alt: string;
 };
 
+export const categoryFallbackImage: Record<ClientCategory, CatalogImage> = {
+  inmobiliaria: {
+    src: "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1600&q=80",
+    alt: "Arquitectura residencial premium en Santiago",
+  },
+  turismo: {
+    src: "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1600&q=80",
+    alt: "Paisaje natural de Chile para programa turístico premium",
+  },
+};
+
 export type BasePublication = {
   slug: string;
   category: ClientCategory;
@@ -98,8 +109,8 @@ export const clientCatalog: Record<ClientCategory, ClientPublication[]> = {
       connectivity: ["A 6 min caminando de Metro Manquehue", "Conexión directa a Apoquindo y Vespucio", "Oferta gastronómica y servicios premium en el entorno"],
       idealFor: ["Ejecutivos con agenda híbrida", "Inversionistas en renta corporativa", "Parejas profesionales"],
       gallery: [
-        { src: "https://source.unsplash.com/1600x1000/?las-condes,apartment,luxury&sig=101", alt: "Living principal con vista urbana en Las Condes" },
-        { src: "https://source.unsplash.com/1600x1000/?office,boutique,corporate,interior&sig=104", alt: "Dormitorio principal con iluminación natural" },
+        { src: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80", alt: "Living principal con vista urbana en Las Condes" },
+        { src: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1600&q=80", alt: "Dormitorio principal con iluminación natural" },
       ],
       socials: socialTemplate,
       ctaLabel: "Agendar visita ejecutiva",
@@ -127,8 +138,8 @@ export const clientCatalog: Record<ClientCategory, ClientPublication[]> = {
       connectivity: ["Salida rápida a Radial Nororiente", "A 12 min de colegios bilingües", "Centros comerciales y clínicas cercanas"],
       idealFor: ["Familias con hijos en edad escolar", "Traslado desde comunas urbanas", "Vida indoor-outdoor"],
       gallery: [
-        { src: "https://source.unsplash.com/1600x1000/?modern,house,garden,chile&sig=102", alt: "Fachada de casa mediterránea en Chicureo" },
-        { src: "https://source.unsplash.com/1600x1000/?modern,house,garden,chile&sig=102", alt: "Jardín con piscina y terraza cubierta" },
+        { src: "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1600&q=80", alt: "Fachada de casa mediterránea en Chicureo" },
+        { src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80", alt: "Jardín con piscina y terraza cubierta" },
       ],
       socials: socialTemplate,
       ctaLabel: "Solicitar visita privada",
@@ -156,8 +167,8 @@ export const clientCatalog: Record<ClientCategory, ClientPublication[]> = {
       connectivity: ["A 75 min de Santiago", "Conexión directa a Ruta 57", "Circuitos enoturísticos y gastronómicos próximos"],
       idealFor: ["Inversionistas en hospitality", "Familias que buscan segunda vivienda", "Proyectos de retiro con plusvalía"],
       gallery: [
-        { src: "https://source.unsplash.com/1600x1000/?vineyard,valley,mountains,chile&sig=103", alt: "Terreno con vista al valle y viñedos" },
-        { src: "https://source.unsplash.com/1600x1000/?vineyard,valley,mountains,chile&sig=103", alt: "Acceso principal de parcela en Aconcagua" },
+        { src: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80", alt: "Terreno con vista al valle y viñedos" },
+        { src: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1600&q=80", alt: "Acceso principal de parcela en Aconcagua" },
       ],
       socials: socialTemplate,
       ctaLabel: "Evaluar factibilidad",
@@ -185,8 +196,8 @@ export const clientCatalog: Record<ClientCategory, ClientPublication[]> = {
       connectivity: ["A pasos de Metro y ciclovías", "Cercano a bancos y notarías", "Acceso inmediato a Costanera Center"],
       idealFor: ["Consultoras estratégicas", "Equipos legales o financieros", "Estudios creativos de nivel premium"],
       gallery: [
-        { src: "https://source.unsplash.com/1600x1000/?office,boutique,corporate,interior&sig=104", alt: "Espacio de oficina moderna en Providencia" },
-        { src: "https://source.unsplash.com/1600x1000/?office,boutique,corporate,interior&sig=104", alt: "Sala de reuniones con estilo corporativo" },
+        { src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80", alt: "Espacio de oficina moderna en Providencia" },
+        { src: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80", alt: "Sala de reuniones con estilo corporativo" },
       ],
       socials: socialTemplate,
       ctaLabel: "Coordinar tour empresarial",
@@ -214,8 +225,8 @@ export const clientCatalog: Record<ClientCategory, ClientPublication[]> = {
       connectivity: ["A 10 min del centro de Viña", "Cercano a restaurantes y clubes", "Conectividad expedita a Concón"],
       idealFor: ["Familias con segunda vivienda", "Inversionistas en renta estival", "Clientes internacionales"],
       gallery: [
-        { src: "https://source.unsplash.com/1600x1000/?ocean,apartment,balcony,view&sig=105", alt: "Terraza con vista al mar en Viña del Mar" },
-        { src: "https://source.unsplash.com/1600x1000/?ocean,apartment,balcony,view&sig=105", alt: "Living con ventanales panorámicos" },
+        { src: "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=1600&q=80", alt: "Terraza con vista al mar en Viña del Mar" },
+        { src: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80", alt: "Living con ventanales panorámicos" },
       ],
       socials: socialTemplate,
       ctaLabel: "Reservar visita en terreno",
@@ -242,8 +253,8 @@ export const clientCatalog: Record<ClientCategory, ClientPublication[]> = {
       recommendations: ["Llevar abrigo térmico para noches frías", "Hidratarse constantemente por altura", "Reservar con 30 días de anticipación"],
       bestSeason: "Marzo a junio y septiembre a noviembre",
       gallery: [
-        { src: "https://source.unsplash.com/1600x1000/?san-pedro-de-atacama,desert,chile&sig=201", alt: "Paisaje desértico de San Pedro de Atacama" },
-        { src: "https://source.unsplash.com/1600x1000/?san-pedro-de-atacama,desert,chile&sig=201", alt: "Cielo estrellado en excursión nocturna" },
+        { src: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80", alt: "Paisaje desértico de San Pedro de Atacama" },
+        { src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80", alt: "Cielo estrellado en excursión nocturna" },
       ],
       socials: socialTemplate,
       ctaLabel: "Cotizar programa",
@@ -268,8 +279,8 @@ export const clientCatalog: Record<ClientCategory, ClientPublication[]> = {
       recommendations: ["Usar ropa por capas", "Calzado de trekking impermeable", "Cámara con batería extra"],
       bestSeason: "Octubre a abril",
       gallery: [
-        { src: "https://source.unsplash.com/1600x1000/?torres-del-paine,patagonia,chile&sig=202", alt: "Macizos de Torres del Paine en amanecer" },
-        { src: "https://source.unsplash.com/1600x1000/?torres-del-paine,patagonia,chile&sig=202", alt: "Navegación en lago glaciar patagónico" },
+        { src: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80", alt: "Macizos de Torres del Paine en amanecer" },
+        { src: "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=1600&q=80", alt: "Navegación en lago glaciar patagónico" },
       ],
       socials: socialTemplate,
       ctaLabel: "Reservar cupo preferente",
@@ -294,8 +305,8 @@ export const clientCatalog: Record<ClientCategory, ClientPublication[]> = {
       recommendations: ["Llevar mochila liviana de trekking", "Considerar traje de baño para termas", "Consultar nivel físico previo"],
       bestSeason: "Todo el año (verano e invierno con enfoques distintos)",
       gallery: [
-        { src: "https://source.unsplash.com/1600x1000/?pucon,villarrica,volcano,lake,chile&sig=203", alt: "Volcán Villarrica y lago al atardecer" },
-        { src: "https://source.unsplash.com/1600x1000/?pucon,villarrica,volcano,lake,chile&sig=203", alt: "Termas naturales en entorno boscoso" },
+        { src: "https://images.unsplash.com/photo-1439853949127-fa647821eba0?auto=format&fit=crop&w=1600&q=80", alt: "Volcán Villarrica y lago al atardecer" },
+        { src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80", alt: "Termas naturales en entorno boscoso" },
       ],
       socials: socialTemplate,
       ctaLabel: "Solicitar itinerario completo",
@@ -320,8 +331,8 @@ export const clientCatalog: Record<ClientCategory, ClientPublication[]> = {
       recommendations: ["Llevar ropa liviana de día y abrigo nocturno", "Reservar masajes con anticipación", "Planificar traslado desde La Serena"],
       bestSeason: "Septiembre a mayo",
       gallery: [
-        { src: "https://source.unsplash.com/1600x1000/?valle-del-elqui,vineyard,chile&sig=204", alt: "Viñedos y cerros del Valle del Elqui" },
-        { src: "https://source.unsplash.com/1600x1000/?valle-del-elqui,vineyard,chile&sig=204", alt: "Experiencia de observación astronómica" },
+        { src: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1600&q=80", alt: "Viñedos y cerros del Valle del Elqui" },
+        { src: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?auto=format&fit=crop&w=1600&q=80", alt: "Experiencia de observación astronómica" },
       ],
       socials: socialTemplate,
       ctaLabel: "Cotizar escapada",
@@ -346,8 +357,8 @@ export const clientCatalog: Record<ClientCategory, ClientPublication[]> = {
       recommendations: ["Llevar chaqueta impermeable", "Calzado cómodo para caminatas", "Agenda flexible por clima insular"],
       bestSeason: "Noviembre a marzo",
       gallery: [
-        { src: "https://source.unsplash.com/1600x1000/?chiloe,palafitos,chile&sig=205", alt: "Palafitos tradicionales de Chiloé" },
-        { src: "https://source.unsplash.com/1600x1000/?chiloe,palafitos,chile&sig=205", alt: "Mercado costero y gastronomía chilota" },
+        { src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80", alt: "Palafitos tradicionales de Chiloé" },
+        { src: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1600&q=80", alt: "Mercado costero y gastronomía chilota" },
       ],
       socials: socialTemplate,
       ctaLabel: "Reservar programa cultural",

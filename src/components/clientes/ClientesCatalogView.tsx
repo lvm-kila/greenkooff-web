@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import {
+  categoryFallbackImage,
   clientCategories,
   getCategoryPublications,
   type ClientCategory,
@@ -21,6 +22,7 @@ function cardHighlights(item: ClientPublication) {
 export default function ClientesCatalogView({ initialCategory = "inmobiliaria" }: { initialCategory?: ClientCategory }) {
   const [activeCategory, setActiveCategory] = useState<ClientCategory>(initialCategory);
   const publications = useMemo(() => getCategoryPublications(activeCategory), [activeCategory]);
+  const fallbackImage = categoryFallbackImage[activeCategory];
 
   return (
     <section className="mx-auto grid w-full max-w-7xl gap-6 px-4 pb-20 md:px-8 lg:grid-cols-[250px_1fr]">
@@ -60,8 +62,8 @@ export default function ClientesCatalogView({ initialCategory = "inmobiliaria" }
             <article key={item.slug} className="group overflow-hidden rounded-[26px] border border-slate-200/80 bg-white/95 shadow-[0_24px_50px_-38px_rgba(11,31,71,0.58)] transition duration-300 hover:-translate-y-1">
               <div className="relative h-48 overflow-hidden">
                 <Image
-                  src={item.gallery[0]?.src ?? "https://source.unsplash.com/1600x1000/?luxury,apartment&sig=999"}
-                  alt={item.gallery[0]?.alt ?? item.title}
+                  src={item.gallery[0]?.src ?? fallbackImage.src}
+                  alt={item.gallery[0]?.alt ?? fallbackImage.alt}
                   fill
                   className="object-cover transition duration-500 group-hover:scale-105"
                 />
