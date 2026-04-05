@@ -17,6 +17,7 @@ export const NAV_LINKS = [
   { label: "Proceso", href: "#proceso" },
   { label: "FAQ", href: "#faq" },
   { label: "Contacto", href: "#contacto" },
+  { label: "Clientes", href: "/clientes" },
 ];
 
 export const TRUST_BADGES = ["+120 empresas acompañadas", "Operación B2B orientada a revenue", "Implementación estratégica desde 15 días"];

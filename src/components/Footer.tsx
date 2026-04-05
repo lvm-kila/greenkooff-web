@@ -1,5 +1,10 @@
+import Link from "next/link";
 import { BRAND, NAV_LINKS, WHATSAPP_URL } from "../content/siteContent";
 import GvcLogo from "./GvcLogo";
+
+function resolveFooterHref(href: string) {
+  return href.startsWith("#") ? `/${href}` : href;
+}
 
 export default function Footer() {
   return (
@@ -18,10 +23,10 @@ export default function Footer() {
           <ul className="mt-4 space-y-2.5 text-sm text-slate-300/85">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
-                <a className="inline-flex items-center gap-2 transition duration-300 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-200" href={link.href}>
+                <Link className="inline-flex items-center gap-2 transition duration-300 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-200" href={resolveFooterHref(link.href)}>
                   <span className="h-1.5 w-1.5 rounded-full bg-[#b8833b]" />
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
