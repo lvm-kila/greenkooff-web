@@ -111,6 +111,14 @@ body {
   @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300/90 bg-white/90 px-6 py-3 text-sm font-semibold text-[#1a3b72] shadow-[0_8px_20px_-16px_rgba(11,31,71,0.45)] transition duration-300 hover:-translate-y-0.5 hover:border-[#1a3b72]/35 hover:bg-white active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1a3b72];
 }
 
+.btn-primary-compact {
+  @apply rounded-lg px-4 py-2 text-xs font-semibold shadow-[0_12px_24px_-18px_rgba(144,95,31,0.75)];
+}
+
+.btn-secondary-compact {
+  @apply rounded-lg px-4 py-2 text-xs font-semibold shadow-[0_8px_18px_-18px_rgba(11,31,71,0.45)];
+}
+
 .badge-trust {
   @apply rounded-full border border-slate-200/90 bg-white/90 px-4 py-2 text-[11px] font-semibold tracking-[0.1em] text-slate-600 shadow-[0_10px_25px_-18px_rgba(15,23,42,0.45)];
 }

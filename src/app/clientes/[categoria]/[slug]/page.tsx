@@ -73,23 +73,27 @@ export default function ClienteDetailPage({ params }: DetailPageProps) {
         <span className="text-[#1a3b72]">{categoryLabel(publication.category)}</span>
       </nav>
 
-      <div className="grid gap-6 lg:grid-cols-[1fr_340px]">
+      <div className="grid gap-6 lg:grid-cols-[1fr_330px]">
         <article className="space-y-6">
-          <header className="rounded-[30px] border border-slate-200/80 bg-white/90 p-6 shadow-[0_24px_56px_-35px_rgba(11,31,71,0.6)]">
+          <header className="rounded-[30px] border border-slate-200/80 bg-white/92 p-6 shadow-[0_24px_56px_-38px_rgba(11,31,71,0.56)] md:p-7">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="rounded-full border border-[#1a3b72]/25 bg-[#1a3b72]/10 px-3 py-1 text-xs font-semibold text-[#1a3b72]">{categoryLabel(publication.category)}</span>
-              <span className="rounded-full border border-amber-300/40 bg-amber-100/70 px-3 py-1 text-xs font-semibold text-amber-900">{publication.badge}</span>
+              <span className="rounded-full border border-[#1a3b72]/20 bg-[#1a3b72]/10 px-3 py-1 text-[11px] font-semibold tracking-[0.02em] text-[#1a3b72]">{categoryLabel(publication.category)}</span>
+              <span className="rounded-full border border-amber-300/40 bg-amber-100/70 px-3 py-1 text-[11px] font-semibold tracking-[0.02em] text-amber-900">{publication.badge}</span>
             </div>
-            <h1 className="mt-3 text-2xl font-semibold text-slate-900 md:text-4xl">{publication.title}</h1>
-            <p className="mt-2 text-base font-semibold text-[#1a3b72] md:text-lg">{publication.price}</p>
+            <h1 className="mt-3 text-2xl font-semibold leading-tight text-slate-900 md:text-[36px]">{publication.title}</h1>
+            <p className="mt-2 text-base font-semibold tracking-[0.01em] text-[#1a3b72] md:text-lg">{publication.price}</p>
             <p className="text-sm text-slate-500">{publication.locationLabel}</p>
             <p className="mt-3 text-sm leading-7 text-slate-600 md:text-base">{publication.shortDescription}</p>
           </header>
 
-          <div className="grid gap-3 sm:grid-cols-2">
-            {publication.gallery.map((image) => (
-              <div key={image.src + image.alt} className="relative h-60 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_20px_45px_-35px_rgba(11,31,71,0.7)]">
+          <div className="grid gap-3 md:grid-cols-[1.2fr_1fr]">
+            {publication.gallery.map((image, index) => (
+              <div
+                key={image.src + image.alt}
+                className={`relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_20px_45px_-35px_rgba(11,31,71,0.7)] ${index === 0 ? "h-[340px] md:h-[380px]" : "h-[240px] md:h-[380px]"}`}
+              >
                 <Image src={image.src} alt={image.alt} fill className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0c1f44]/20 via-transparent to-transparent" />
               </div>
             ))}
           </div>
@@ -111,7 +115,7 @@ export default function ClienteDetailPage({ params }: DetailPageProps) {
                     publication.specs.parking,
                     publication.specs.extra,
                   ].map((item) => (
-                    <li key={item} className="rounded-xl border border-slate-200 bg-slate-50 px-3 py-2">{item}</li>
+                    <li key={item} className="rounded-xl border border-slate-200/90 bg-slate-50 px-3 py-2">{item}</li>
                   ))}
                 </ul>
               </div>
@@ -120,7 +124,7 @@ export default function ClienteDetailPage({ params }: DetailPageProps) {
                 {sectionTitle("Entorno y conectividad")}
                 <ul className="mt-4 space-y-2 text-sm text-slate-600">
                   {publication.connectivity.map((item) => (
-                    <li key={item} className="rounded-xl border border-slate-200 bg-slate-50 px-3 py-2">{item}</li>
+                    <li key={item} className="rounded-xl border border-slate-200/90 bg-slate-50 px-3 py-2">{item}</li>
                   ))}
                 </ul>
               </div>
@@ -129,7 +133,7 @@ export default function ClienteDetailPage({ params }: DetailPageProps) {
                 {sectionTitle("Ideal para")}
                 <ul className="mt-4 flex flex-wrap gap-2">
                   {publication.idealFor.map((item) => (
-                    <li key={item} className="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm text-slate-600">{item}</li>
+                    <li key={item} className="rounded-full border border-slate-200/90 bg-white px-3 py-1 text-xs font-medium tracking-[0.02em] text-slate-600">{item}</li>
                   ))}
                 </ul>
               </div>
@@ -140,7 +144,7 @@ export default function ClienteDetailPage({ params }: DetailPageProps) {
                 {sectionTitle("Qué incluye")}
                 <ul className="mt-4 grid gap-2 text-sm text-slate-600 md:grid-cols-2">
                   {publication.includes.map((item) => (
-                    <li key={item} className="rounded-xl border border-slate-200 bg-slate-50 px-3 py-2">{item}</li>
+                    <li key={item} className="rounded-xl border border-slate-200/90 bg-slate-50 px-3 py-2">{item}</li>
                   ))}
                 </ul>
               </div>
@@ -149,7 +153,7 @@ export default function ClienteDetailPage({ params }: DetailPageProps) {
                 {sectionTitle("Ideal para")}
                 <ul className="mt-4 flex flex-wrap gap-2">
                   {publication.idealFor.map((item) => (
-                    <li key={item} className="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm text-slate-600">{item}</li>
+                    <li key={item} className="rounded-full border border-slate-200/90 bg-white px-3 py-1 text-xs font-medium tracking-[0.02em] text-slate-600">{item}</li>
                   ))}
                 </ul>
               </div>
@@ -158,7 +162,7 @@ export default function ClienteDetailPage({ params }: DetailPageProps) {
                 {sectionTitle("Recomendaciones del viaje")}
                 <ul className="mt-4 space-y-2 text-sm text-slate-600">
                   {publication.recommendations.map((item) => (
-                    <li key={item} className="rounded-xl border border-slate-200 bg-slate-50 px-3 py-2">{item}</li>
+                    <li key={item} className="rounded-xl border border-slate-200/90 bg-slate-50 px-3 py-2">{item}</li>
                   ))}
                 </ul>
                 <p className="mt-4 rounded-xl border border-[#1a3b72]/20 bg-[#1a3b72]/5 px-3 py-2 text-sm font-semibold text-[#1a3b72]">Mejor temporada: {publication.bestSeason}</p>
@@ -167,22 +171,22 @@ export default function ClienteDetailPage({ params }: DetailPageProps) {
           )}
         </article>
 
-        <aside className="h-fit rounded-[28px] border border-slate-200/80 bg-white/95 p-5 shadow-[0_24px_56px_-36px_rgba(11,31,71,0.6)] lg:sticky lg:top-24">
+        <aside className="h-fit rounded-[28px] border border-slate-200/80 bg-white/95 p-5 shadow-[0_24px_56px_-40px_rgba(11,31,71,0.58)] lg:sticky lg:top-24">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Resumen comercial</p>
-          <p className="mt-2 text-2xl font-semibold text-[#1a3b72]">{publication.price}</p>
+          <p className="mt-2 text-[30px] font-semibold leading-tight text-[#1a3b72]">{publication.price}</p>
           <p className="text-sm text-slate-500">{publication.locationLabel}</p>
 
           <div className="mt-4 space-y-2">
-            <AddToCartButton item={publication} className="btn-primary w-full" />
-            <a href={publication.socials.whatsapp} className="btn-secondary w-full" target="_blank" rel="noreferrer">{publication.ctaLabel}</a>
+            <AddToCartButton item={publication} className="btn-primary btn-primary-compact w-full" />
+            <a href={publication.socials.whatsapp} className="btn-secondary btn-secondary-compact w-full" target="_blank" rel="noreferrer">{publication.ctaLabel}</a>
           </div>
 
           <div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-3">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">Redes y contacto</p>
             <div className="mt-2 flex flex-wrap gap-2 text-xs font-semibold">
-              <a href={publication.socials.whatsapp} target="_blank" rel="noreferrer" className="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-slate-700 hover:text-[#1a3b72]">WhatsApp</a>
-              <a href={publication.socials.facebook} target="_blank" rel="noreferrer" className="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-slate-700 hover:text-[#1a3b72]">Facebook</a>
-              <a href={publication.socials.instagram} target="_blank" rel="noreferrer" className="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-slate-700 hover:text-[#1a3b72]">Instagram</a>
+              <a href={publication.socials.whatsapp} target="_blank" rel="noreferrer" className="rounded-full border border-slate-300 bg-white px-3 py-1 text-[11px] text-slate-700 transition hover:border-[#1a3b72]/25 hover:text-[#1a3b72]">WhatsApp</a>
+              <a href={publication.socials.facebook} target="_blank" rel="noreferrer" className="rounded-full border border-slate-300 bg-white px-3 py-1 text-[11px] text-slate-700 transition hover:border-[#1a3b72]/25 hover:text-[#1a3b72]">Facebook</a>
+              <a href={publication.socials.instagram} target="_blank" rel="noreferrer" className="rounded-full border border-slate-300 bg-white px-3 py-1 text-[11px] text-slate-700 transition hover:border-[#1a3b72]/25 hover:text-[#1a3b72]">Instagram</a>
             </div>
           </div>
         </aside>
@@ -192,9 +196,9 @@ export default function ClienteDetailPage({ params }: DetailPageProps) {
         <h2 className="text-2xl font-semibold text-slate-900">Publicaciones relacionadas</h2>
         <div className="mt-4 grid gap-4 md:grid-cols-3">
           {related.map((item) => (
-            <article key={item.slug} className="overflow-hidden rounded-3xl border border-slate-200 bg-white/95 shadow-[0_20px_45px_-35px_rgba(11,31,71,0.6)]">
+            <article key={item.slug} className="overflow-hidden rounded-3xl border border-slate-200 bg-white/95 shadow-[0_20px_45px_-38px_rgba(11,31,71,0.6)]">
               <div className="relative h-40">
-                <Image src={item.gallery[0]?.src ?? "/clientes/turismo-premium-1.svg"} alt={item.title} fill className="object-cover" />
+                <Image src={item.gallery[0]?.src ?? "https://source.unsplash.com/1600x1000/?chile,travel,landscape&sig=998"} alt={item.title} fill className="object-cover" />
               </div>
               <div className="p-4">
                 <p className="text-xs font-semibold text-[#1a3b72]">{item.relatedHint}</p>

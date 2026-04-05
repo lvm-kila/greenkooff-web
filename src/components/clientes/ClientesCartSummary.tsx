@@ -13,15 +13,15 @@ export default function ClientesCartSummary() {
     <div className="fixed bottom-5 right-4 z-40 md:right-8">
       <button
         type="button"
-        className="inline-flex items-center gap-2 rounded-full border border-[#1a3b72]/25 bg-white/95 px-4 py-2.5 text-sm font-semibold text-[#1a3b72] shadow-[0_20px_45px_-30px_rgba(11,31,71,0.8)] backdrop-blur"
+        className="inline-flex items-center gap-2 rounded-full border border-[#1a3b72]/20 bg-white/95 px-4 py-2 text-sm font-semibold text-[#1a3b72] shadow-[0_20px_45px_-34px_rgba(11,31,71,0.76)] backdrop-blur transition hover:-translate-y-0.5"
         onClick={() => setOpen((prev) => !prev)}
       >
         Carrito clientes
-        <span className="inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-[#1a3b72] px-1.5 text-xs text-white">{count}</span>
+        <span className="inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-[#1a3b72] px-1.5 text-[11px] text-white">{count}</span>
       </button>
 
       {open && (
-        <div className="mt-3 w-[min(92vw,380px)] rounded-3xl border border-slate-200/85 bg-white/95 p-4 shadow-[0_30px_70px_-40px_rgba(11,31,71,0.75)] backdrop-blur">
+        <div className="mt-3 w-[min(92vw,380px)] rounded-3xl border border-slate-200/85 bg-white/95 p-4 shadow-[0_26px_65px_-44px_rgba(11,31,71,0.74)] backdrop-blur">
           <div className="mb-3 flex items-center justify-between">
             <p className="text-sm font-semibold text-slate-900">Items demo ({count})</p>
             <button type="button" onClick={clearCart} className="text-xs font-semibold text-slate-500 hover:text-[#1a3b72]">
