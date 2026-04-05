@@ -1,0 +1,13 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="tour2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#112C57"/>
+      <stop offset="1" stop-color="#1C7C86"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#tour2)"/>
+  <rect x="120" y="160" width="1360" height="700" rx="40" fill="#FFFFFF" fill-opacity="0.12"/>
+  <path d="M240 760L520 460L720 640L930 500L1200 760H240Z" fill="#D9E8F6" fill-opacity="0.64"/>
+  <path d="M180 780L420 560L560 650L760 540L960 700L1160 560L1420 780H180Z" fill="#B8833B" fill-opacity="0.46"/>
+  <text x="220" y="860" fill="#F8FBFF" font-size="50" font-family="Arial, sans-serif" font-weight="700">Experiencias Curadas</text>
+</svg>
